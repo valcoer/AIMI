@@ -1,0 +1,8 @@
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\bin\Debug\AIMi.exe
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\bin\Debug\AIMi.pdb
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\AIMi.Properties.Resources.resources
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\AIMi.exe
+c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\AIMi.pdb
