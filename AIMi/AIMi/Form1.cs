@@ -84,15 +84,15 @@ namespace AIMind
 
         }
         string[] _greet;
-       List<string> _greets = new List<string>();
+      // List<string> _greets = new List<string>();
         
-        //string[] _greet ={"hi","hello","greetings" };
-        public List<string> getwords()
-        {
+        string[] _greet ={"hi","hello","greetings" };
+       // public List<string> getwords()
+        //{
            
-            _greets = daobj.RetrieveWords();
+           // _greets = daobj.RetrieveWords();
               
-        }
+       // }
         public string[] Greet
         {
             get { return _greet; }
