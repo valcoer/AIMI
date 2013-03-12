@@ -9,31 +9,30 @@ using System.Windows.Forms;
 
 namespace AIMind
 {
-    public partial class Form1 : Form
+    public partial class InOut : Form
     {
         public string salutation = "hello world";
         public string regret = "I do not understand";
         Greetings greetings = new Greetings();
+        //data access object variable
+        DataAccess dataAccess;
         
-        public Form1()
+        public InOut()
         {
             InitializeComponent();
         }
         
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            label1.Text = "you have my attention";
-            this.button1.Visible = false;
-        }
+       
+     
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void inputWindow_TextChanged(object sender, EventArgs e)
         {
              
             foreach (string greeting in greetings.Greet)
             {
                 bool resultant;
-                resultant = this.textBox1.Text.Contains(greeting);
+                resultant = this.inputWindow.Text.Contains(greeting);
 
                 if (resultant == true)
                 {
@@ -43,8 +42,8 @@ namespace AIMind
                 else
                 {
                     label1.Text = "is this a greeting?";
-                    button2.Visible = true;
-                    button3.Visible = true;
+                    YesButton.Visible = true;
+                    noButton.Visible = true;
 
                 }
             }
@@ -53,16 +52,16 @@ namespace AIMind
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void yesButton_Click(object sender, EventArgs e)
         {
-            string newGreeting = this.textBox1.Text;
+            string newGreeting = this.inputWindow.Text;
             
           //  this.label1.Text = newGreeting;
             greetings.createNewWord(newGreeting);
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void noButton_Click(object sender, EventArgs e)
         {
 
         }
@@ -73,6 +72,8 @@ namespace AIMind
     }
     public class Greetings
     {
+        
+        
         // Data access object variable.
         DataAccess daobj; 
         // constructor
@@ -82,7 +83,16 @@ namespace AIMind
            daobj = new DataAccess("XMLgreetinglist.xml");
 
         }
-        string[] _greet = { "hi", "hello", "greetings" };
+        string[] _greet;
+       List<string> _greets = new List<string>();
+        
+        //string[] _greet ={"hi","hello","greetings" };
+        public List<string> getwords()
+        {
+           
+            _greets = daobj.RetrieveWords();
+              
+        }
         public string[] Greet
         {
             get { return _greet; }
