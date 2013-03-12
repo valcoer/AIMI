@@ -6,3 +6,5 @@ c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\Ge
 c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\GenerateResource.write.1.tlog
 c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\AIMi.exe
 c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\AIMi.pdb
+C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.exe
+C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.pdb
