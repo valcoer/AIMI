@@ -13,7 +13,7 @@ namespace AIMind
     {
         public string salutation = "hello world";
         public string regret = "I do not understand";
-        
+        Greetings greetings = new Greetings();
         
         public Form1()
         {
@@ -29,7 +29,7 @@ namespace AIMind
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-              Greetings greetings = new Greetings();
+             
             foreach (string greeting in greetings.Greet)
             {
                 bool resultant;
@@ -57,7 +57,9 @@ namespace AIMind
         {
             string newGreeting = this.textBox1.Text;
             
-            this.label1.Text = newGreeting;
+          //  this.label1.Text = newGreeting;
+            greetings.createNewWord(newGreeting);
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -71,6 +73,15 @@ namespace AIMind
     }
     public class Greetings
     {
+        // Data access object variable.
+        DataAccess daobj; 
+        // constructor
+        public Greetings()
+        {
+           // Create the DataAccess access object.
+           daobj = new DataAccess("XMLgreetinglist.xml");
+
+        }
         string[] _greet = { "hi", "hello", "greetings" };
         public string[] Greet
         {
@@ -81,7 +92,10 @@ namespace AIMind
             get { return _greet[index]; }
         }
 
-
+         public void createNewWord(string word)
+        {
+          daobj.AddWord(word);
+        }
        
     }
 }

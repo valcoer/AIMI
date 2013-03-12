@@ -13,6 +13,7 @@ namespace AIMind
         private string _path;
         private string _localPath = @"";
         XmlDocument doc;
+         
         public DataAccess(string xmlDocumentName)
         {
             _path = _localPath + xmlDocumentName;
@@ -21,10 +22,11 @@ namespace AIMind
         }
         public void AddWord(string word)
         {
-            System.Xml.XmlElement newNode = new XmlElement() ;
+           XmlNode newNode = doc.CreateNode(XmlNodeType.Text  , "word", "");
+
             newNode.InnerText = word;
             
-            doc.SelectSingleNode("Words").AppendChild(newNode);
+            doc.SelectSingleNode("words").AppendChild(newNode);
             doc.Save(_path);
         }
     }
