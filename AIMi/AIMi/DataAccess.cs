@@ -8,7 +8,7 @@ using System.IO;
 
 namespace AIMind
 {
-    class DataAccess
+    public class DataAccess
     {
         /// <summary>
         /// Class variables

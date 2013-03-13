@@ -13,14 +13,14 @@ namespace AIMind
     {
         public string salutation = "hello world";
         public string regret = "I do not understand";
-        Greetings greetings = new Greetings();
         //data access object variable
-        DataAccess dataAccess;
-        
+        public DataAccess dataAccess;
+        public Greetings greetings;
         public InOut()
         {
             dataAccess = new DataAccess("XMLGreetinglist.xml");
             InitializeComponent();
+            greetings = new Greetings(dataAccess);
         }
         
 
@@ -89,10 +89,10 @@ namespace AIMind
         // Data access object variable.
         DataAccess daobj; 
         // constructor
-        public Greetings()
+        public Greetings(DataAccess dataobject )
         {
            // Create the DataAccess access object.
-           daobj = new DataAccess("XMLgreetinglist.xml");
+           daobj = dataobject;
            getwords();
         }
       /// <summary>
