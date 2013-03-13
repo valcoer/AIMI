@@ -11,8 +11,7 @@ namespace AIMind
 {
     public partial class InOut : Form
     {
-        public string salutation = "hello world";
-        public string regret = "I do not understand";
+
         //data access object variable
         public DataAccess dataAccess;
         public Greetings greetings;
@@ -77,49 +76,7 @@ namespace AIMind
                 lblOutputLabel.Text += temp[x].ToString() + " ";
             }
         }
-
-    
-      
-      
-       
+   
     }
-    public class Greetings
-    {
-
-        string[] _greet;
-        // Data access object variable.
-        DataAccess daobj; 
-        // constructor
-        public Greetings(DataAccess dataobject )
-        {
-           // Create the DataAccess access object.
-           daobj = dataobject;
-           getwords();
-        }
-      /// <summary>
-      /// populate the Greet member from the data access object
-      /// </summary>
-       public void getwords()
-          {
-          _greet = daobj.RetrieveWords();
-        }
-        public string[] Greet
-        {
-            
-            get {getwords();
-                return _greet; }
-        }
-        public string this[int index]
-        {
-            get { return _greet[index]; }
-        }
-
-         public void createNewWord(string word)
-        {
-          daobj.AddWord(word);
-             // now update our internal record of the words
-          getwords();
-        }
-       
-    }
+  
 }

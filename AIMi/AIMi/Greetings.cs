@@ -6,45 +6,45 @@ using System.Text;
 
 namespace AIMind
 {
-    public class Greetings
+    class Greetings
     {
-
-
+        string[] _greet;
         // Data access object variable.
         DataAccess daobj;
         // constructor
-        public Greetings()
+        public Greetings(DataAccess dataobject)
         {
             // Create the DataAccess access object.
-            daobj = new DataAccess("XMLgreetinglist.xml");
-
+            daobj = dataobject;
+            getwords();
         }
-
-        string[] _greet;
-        
-        //greeting list array
-       // string[] _greet = { "hi", "hello", "greetings" };
-        //function to get the xml list in a string array
+        /// <summary>
+        /// populate the Greet member from the data access object
+        /// </summary>
         public void getwords()
         {
-
             _greet = daobj.RetrieveWords();
-
-
         }
         public string[] Greet
         {
-            get { return _greet; }
+
+            get
+            {
+                getwords();
+                return _greet;
+            }
         }
         public string this[int index]
         {
             get { return _greet[index]; }
         }
-        // add new word to the xml list
+
         public void createNewWord(string word)
         {
             daobj.AddWord(word);
+            // now update our internal record of the words
+            getwords();
         }
-
+       
     }
 }
