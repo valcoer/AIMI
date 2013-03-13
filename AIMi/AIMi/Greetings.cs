@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AIMind
 {
-    class Greetings
+   public class Greetings
     {
         string[] _greet;
         // Data access object variable.

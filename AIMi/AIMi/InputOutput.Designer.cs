@@ -52,7 +52,8 @@
             this.inputWindow.Size = new System.Drawing.Size(259, 20);
             this.inputWindow.TabIndex = 2;
             this.inputWindow.Text = "type here";
-            this.inputWindow.TextChanged += new System.EventHandler(this.inputWindow_TextChanged);
+            this.inputWindow.Enter += new System.EventHandler(this.inputWindow_EnterPressed);
+            this.inputWindow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputWindow_KeyPress);
             // 
             // YesButton
             // 
@@ -98,7 +99,6 @@
             this.Controls.Add(this.lblOutputLabel);
             this.Name = "InOut";
             this.Text = "AIMind";
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 

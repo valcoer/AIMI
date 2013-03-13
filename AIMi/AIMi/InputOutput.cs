@@ -26,7 +26,7 @@ namespace AIMind
        
      
 
-        private void inputWindow_TextChanged(object sender, EventArgs e)
+        private void inputWindow_EnterPressed(object sender, EventArgs e)
         {
              
             foreach (string greeting in dataAccess.RetrieveWords())
@@ -63,7 +63,7 @@ namespace AIMind
 
         private void noButton_Click(object sender, EventArgs e)
         {
-
+            lblOutputLabel.Text = 
         }
 
         private void btnListVocabulary_Click(object sender, EventArgs e)
@@ -76,7 +76,42 @@ namespace AIMind
                 lblOutputLabel.Text += temp[x].ToString() + " ";
             }
         }
-   
+
+        private void inputWindow_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) // 13 is the enter key
+            {
+
+                foreach (string greeting in dataAccess.RetrieveWords())
+                {
+                    bool resultant;
+                    resultant = this.inputWindow.Text.Contains(greeting);
+
+                    if (resultant == true)
+                    {
+                        Random rnd = new Random();
+                        int index = rnd.Next(1, dataAccess.getNodelistSize()); // creates a number between 1 and the node list size
+                        lblOutputLabel.Text = greetings.Greet[index].ToString();
+                        YesButton.Visible = false;
+                        noButton.Visible = false;
+                        return;
+                    }
+                    else
+                    {
+                        lblOutputLabel.Text = "is this a greeting?";
+                        YesButton.Visible = true;
+                        noButton.Visible = true;
+
+                    }
+                }
+
+            }
+
+        }
+
+
+       
+       
     }
   
 }

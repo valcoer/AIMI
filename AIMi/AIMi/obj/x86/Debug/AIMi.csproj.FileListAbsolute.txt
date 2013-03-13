@@ -9,7 +9,6 @@ c:\users\arioch\documents\visual studio 2010\Projects\AIMi\AIMi\obj\x86\Debug\AI
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.exe
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.pdb
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.Properties.Resources.resources
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.exe
@@ -24,3 +23,4 @@ C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.exe
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.pdb
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMind.InOut.resources
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.Properties.Resources.resources
+C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMind.Properties.Resources.resources
