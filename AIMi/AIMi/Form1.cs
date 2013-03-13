@@ -30,7 +30,7 @@ namespace AIMind
         private void inputWindow_TextChanged(object sender, EventArgs e)
         {
              
-            foreach (string greeting in greetings.Greet)
+            foreach (string greeting in dataAccess.RetrieveWords())
             {
                 bool resultant;
                 resultant = this.inputWindow.Text.Contains(greeting);
@@ -56,8 +56,8 @@ namespace AIMind
         private void yesButton_Click(object sender, EventArgs e)
         {
             string newGreeting = this.inputWindow.Text;
-            
-          //  this.label1.Text = newGreeting;
+
+            lblOutputLabel.Text = newGreeting;
             greetings.createNewWord(newGreeting);
             
         }
@@ -84,8 +84,8 @@ namespace AIMind
     }
     public class Greetings
     {
-        
-        
+
+        string[] _greet;
         // Data access object variable.
         DataAccess daobj; 
         // constructor
@@ -93,21 +93,20 @@ namespace AIMind
         {
            // Create the DataAccess access object.
            daobj = new DataAccess("XMLgreetinglist.xml");
-
+           getwords();
         }
-       // string[] _greet;
-      // List<string> _greets = new List<string>();
-        
-        string[] _greet ={"hi","hello","greetings" };
-       // public List<string> getwords()
-        //{
-           
-           // _greets = daobj.RetrieveWords();
-              
-       // }
+      /// <summary>
+      /// populate the Greet member from the data access object
+      /// </summary>
+       public void getwords()
+          {
+          _greet = daobj.RetrieveWords();
+        }
         public string[] Greet
         {
-            get { return _greet; }
+            
+            get {getwords();
+                return _greet; }
         }
         public string this[int index]
         {
@@ -117,6 +116,8 @@ namespace AIMind
          public void createNewWord(string word)
         {
           daobj.AddWord(word);
+             // now update our internal record of the words
+          getwords();
         }
        
     }

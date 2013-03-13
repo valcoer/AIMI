@@ -38,10 +38,12 @@ namespace AIMind
      /// <param name="word"></param>
         public void AddWord(string word)
         {
-         
+
             XmlNode newNode = m_doc.CreateElement("word");
             newNode.InnerText = word;
             m_doc.SelectSingleNode("//words").AppendChild(newNode);
+            m_nodelist = null;
+            populateNodeList();
         }
 
         /// <summary>
@@ -51,7 +53,7 @@ namespace AIMind
         public String[] RetrieveWords()
         {
            
-            string[] list = new string[m_nodelist.Count];
+            string[] list = new string[m_nodelist.Count ];
             int x = 0;
             foreach (XmlNode n in m_nodelist)
             {   

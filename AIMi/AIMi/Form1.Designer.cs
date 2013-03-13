@@ -40,6 +40,7 @@
             this.lblOutputLabel.AutoSize = true;
             this.lblOutputLabel.Location = new System.Drawing.Point(73, 179);
             this.lblOutputLabel.Name = "lblOutputLabel";
+            this.lblOutputLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblOutputLabel.Size = new System.Drawing.Size(131, 13);
             this.lblOutputLabel.TabIndex = 1;
             this.lblOutputLabel.Text = "my responses appear here";
