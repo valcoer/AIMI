@@ -19,6 +19,7 @@ namespace AIMind
         
         public InOut()
         {
+            dataAccess = new DataAccess("XMLGreetinglist.xml");
             InitializeComponent();
         }
         
@@ -36,12 +37,12 @@ namespace AIMind
 
                 if (resultant == true)
                 {
-                    label1.Text = greeting;
+                    lblOutputLabel.Text = greeting;
                     return;
                 }
                 else
                 {
-                    label1.Text = "is this a greeting?";
+                    lblOutputLabel.Text = "is this a greeting?";
                     YesButton.Visible = true;
                     noButton.Visible = true;
 
@@ -66,6 +67,17 @@ namespace AIMind
 
         }
 
+        private void btnListVocabulary_Click(object sender, EventArgs e)
+        {
+            string[] temp = new string[dataAccess.getNodelistSize()];    
+            temp = dataAccess.RetrieveWords();
+            lblOutputLabel.Text = "";
+            for (int x = 0; x < dataAccess.getNodelistSize(); x++)
+            {
+                lblOutputLabel.Text += temp[x].ToString() + " ";
+            }
+        }
+
       
       
        
@@ -83,7 +95,7 @@ namespace AIMind
            daobj = new DataAccess("XMLgreetinglist.xml");
 
         }
-        string[] _greet;
+       // string[] _greet;
       // List<string> _greets = new List<string>();
         
         string[] _greet ={"hi","hello","greetings" };

@@ -10,55 +10,83 @@ namespace AIMind
 {
     class DataAccess
     {
-        
-        private string _path;
-        private string _localPath = @"";
-        XmlDocument doc;
+        /// <summary>
+        /// Class variables
+        /// </summary>
+        private string m_path;
+        private string m_localPath = @"";
+        XmlDocument m_doc;
+        XmlNodeList m_nodelist;
 
+
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="xmlDocumentName"></param>
         public DataAccess(string xmlDocumentName)
         {
-            _path = _localPath + xmlDocumentName;
-            doc = new XmlDocument();
-            doc.Load(_path);
+            m_path = m_localPath + xmlDocumentName;
+            m_doc = new XmlDocument();
+            m_doc.Load(m_path);
+            populateNodeList();
         }
 
-     
+     /// <summary>
+     /// Add a word to the node list
+     /// </summary>
+     /// <param name="word"></param>
         public void AddWord(string word)
         {
-            XmlNode newWords = doc.CreateElement("words");
-
-            XmlNode newNode = doc.CreateElement("word");
-
+         
+            XmlNode newNode = m_doc.CreateElement("word");
             newNode.InnerText = word;
-            newWords.AppendChild(newNode);
-
-
-            doc.SelectSingleNode("//words").AppendChild(newNode);
-            doc.Save(_path);
+            m_doc.SelectSingleNode("//words").AppendChild(newNode);
         }
 
-        // retrieve the words from the xml list
+        /// <summary>
+        /// retrieve the words from the xml list
+        /// </summary>
+        /// <returns>String[]</returns>
         public String[] RetrieveWords()
         {
+           
+            string[] list = new string[m_nodelist.Count];
             int x = 0;
-            
-            XmlNode root = doc.SelectSingleNode("//words");
-            XmlNodeList nodelist = root.SelectNodes("word");
-            foreach (XmlNode y in nodelist)
-            {
-                x++;
-                Console.WriteLine(x);
-            }
-            string[] list = new string[x];
-            foreach (XmlNode n in nodelist)
-            {
+            foreach (XmlNode n in m_nodelist)
+            {   
                 string w;
-                w = n.SelectSingleNode("word").InnerText;
-                insertWord(w, list, x);
+                w = n.InnerText.ToString();
+                list[x] = w;
+                x++;
             }
-            return list;
-        }
 
+            return list;
+            
+        }
+        /// <summary>
+        /// interface to get the nodelist size
+        /// </summary>
+        /// <returns></returns>
+       public int getNodelistSize()
+        {
+            return m_nodelist.Count;
+        }
+        /// <summary>
+        /// populate the internal nodelist
+        /// </summary>
+       void populateNodeList()
+       {
+            XmlNode root = m_doc.SelectSingleNode("//words");
+            m_nodelist = root.SelectNodes("word");
+        }
+/// <summary>
+/// deprecated
+/// </summary>
+/// <param name="word"></param>
+/// <param name="list"></param>
+/// <param name="x"></param>
+/// <returns></returns>
         public string[] insertWord(string word,string[] list,int x)
         {
 
@@ -67,8 +95,11 @@ namespace AIMind
                 list[i] = word;
             }
             return list;
-
         }
+        /// <summary>
+        /// Utility function for debugging
+        /// </summary>
+        /// <param name="word"></param>
         static void test(string word)
         {
             if(word == null)

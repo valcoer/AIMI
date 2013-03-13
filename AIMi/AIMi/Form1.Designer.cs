@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOutputLabel = new System.Windows.Forms.Label();
             this.inputWindow = new System.Windows.Forms.TextBox();
             this.YesButton = new System.Windows.Forms.Button();
             this.noButton = new System.Windows.Forms.Button();
+            this.btnListVocabulary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblOutputLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "my responses appear here";
+            this.lblOutputLabel.AutoSize = true;
+            this.lblOutputLabel.Location = new System.Drawing.Point(73, 179);
+            this.lblOutputLabel.Name = "lblOutputLabel";
+            this.lblOutputLabel.Size = new System.Drawing.Size(131, 13);
+            this.lblOutputLabel.TabIndex = 1;
+            this.lblOutputLabel.Text = "my responses appear here";
             // 
             // inputWindow
             // 
@@ -74,15 +75,26 @@
             this.noButton.Visible = false;
             this.noButton.Click += new System.EventHandler(this.noButton_Click);
             // 
+            // btnListVocabulary
+            // 
+            this.btnListVocabulary.Location = new System.Drawing.Point(196, 39);
+            this.btnListVocabulary.Name = "btnListVocabulary";
+            this.btnListVocabulary.Size = new System.Drawing.Size(75, 74);
+            this.btnListVocabulary.TabIndex = 5;
+            this.btnListVocabulary.Text = "List Vocabulary";
+            this.btnListVocabulary.UseVisualStyleBackColor = true;
+            this.btnListVocabulary.Click += new System.EventHandler(this.btnListVocabulary_Click);
+            // 
             // InOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnListVocabulary);
             this.Controls.Add(this.noButton);
             this.Controls.Add(this.YesButton);
             this.Controls.Add(this.inputWindow);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblOutputLabel);
             this.Name = "InOut";
             this.Text = "AIMind";
             this.ResumeLayout(false);
@@ -92,10 +104,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOutputLabel;
         private System.Windows.Forms.TextBox inputWindow;
         private System.Windows.Forms.Button YesButton;
         private System.Windows.Forms.Button noButton;
+        private System.Windows.Forms.Button btnListVocabulary;
 
     }
 }
