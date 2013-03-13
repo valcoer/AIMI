@@ -98,6 +98,7 @@
             this.Controls.Add(this.lblOutputLabel);
             this.Name = "InOut";
             this.Text = "AIMind";
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 
