@@ -33,6 +33,7 @@
             this.YesButton = new System.Windows.Forms.Button();
             this.noButton = new System.Windows.Forms.Button();
             this.btnListVocabulary = new System.Windows.Forms.Button();
+            this.parse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblOutputLabel
@@ -87,11 +88,22 @@
             this.btnListVocabulary.UseVisualStyleBackColor = true;
             this.btnListVocabulary.Click += new System.EventHandler(this.btnListVocabulary_Click);
             // 
+            // parse
+            // 
+            this.parse.Location = new System.Drawing.Point(13, 143);
+            this.parse.Name = "parse";
+            this.parse.Size = new System.Drawing.Size(136, 23);
+            this.parse.TabIndex = 6;
+            this.parse.Text = "Parse sentence";
+            this.parse.UseVisualStyleBackColor = true;
+            this.parse.Click += new System.EventHandler(this.parse_Click);
+            // 
             // InOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.parse);
             this.Controls.Add(this.btnListVocabulary);
             this.Controls.Add(this.noButton);
             this.Controls.Add(this.YesButton);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.Button YesButton;
         private System.Windows.Forms.Button noButton;
         private System.Windows.Forms.Button btnListVocabulary;
+        private System.Windows.Forms.Button parse;
 
     }
 }

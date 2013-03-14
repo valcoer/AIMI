@@ -13,13 +13,15 @@ namespace AIMind
     {
 
         //data access object variable
-        public DataAccess dataAccess;
+        public XmlDataAccess xmlDataAccess;
         public Greetings greetings;
+        public Listener listener;
         public InOut()
         {
-            dataAccess = new DataAccess("XMLGreetinglist.xml");
+            xmlDataAccess = new XmlDataAccess("XMLGreetinglist.xml");
+            listener = new Listener();
             InitializeComponent();
-            greetings = new Greetings(dataAccess);
+            greetings = new Greetings(xmlDataAccess);
         }
         
 
@@ -29,7 +31,7 @@ namespace AIMind
         private void inputWindow_EnterPressed(object sender, EventArgs e)
         {
              
-            foreach (string greeting in dataAccess.RetrieveWords())
+            foreach (string greeting in xmlDataAccess.RetrieveWords())
             {
                 bool resultant;
                 resultant = this.inputWindow.Text.Contains(greeting);
@@ -68,10 +70,10 @@ namespace AIMind
 
         private void btnListVocabulary_Click(object sender, EventArgs e)
         {
-            string[] temp = new string[dataAccess.getNodelistSize()];    
-            temp = dataAccess.RetrieveWords();
+            string[] temp = new string[xmlDataAccess.getNodelistSize()];    
+            temp = xmlDataAccess.RetrieveWords();
             lblOutputLabel.Text = "";
-            for (int x = 0; x < dataAccess.getNodelistSize(); x++)
+            for (int x = 0; x < xmlDataAccess.getNodelistSize(); x++)
             {
                 lblOutputLabel.Text += temp[x].ToString() + " ";
             }
@@ -82,7 +84,7 @@ namespace AIMind
             if (e.KeyChar == 13) // 13 is the enter key
             {
 
-                foreach (string greeting in dataAccess.RetrieveWords())
+                foreach (string greeting in xmlDataAccess.RetrieveWords())
                 {
                     bool resultant;
                     resultant = this.inputWindow.Text.Contains(greeting);
@@ -90,7 +92,7 @@ namespace AIMind
                     if (resultant == true)
                     {
                         Random rnd = new Random();
-                        int index = rnd.Next(1, dataAccess.getNodelistSize()); // creates a number between 1 and the node list size
+                        int index = rnd.Next(1, xmlDataAccess.getNodelistSize()); // creates a number between 1 and the node list size
                         lblOutputLabel.Text = greetings.Greet[index].ToString();
                         YesButton.Visible = false;
                         noButton.Visible = false;
@@ -111,7 +113,13 @@ namespace AIMind
 
         private void InOut_FormClosing(object sender, FormClosingEventArgs e)
         {
-            dataAccess.saveDoc();
+            xmlDataAccess.saveDoc();
+        }
+
+        private void parse_Click(object sender, EventArgs e)
+        {
+            string sentence = inputWindow.Text;
+            listener.parse_Sentence(sentence);
         }
 
        

@@ -8,7 +8,7 @@ using System.IO;
 
 namespace AIMind
 {
-    public class DataAccess
+    public class XmlDataAccess
     {
         /// <summary>
         /// Class variables
@@ -25,7 +25,7 @@ namespace AIMind
         /// Constructor
         /// </summary>
         /// <param name="xmlDocumentName"></param>
-        public DataAccess(string xmlDocumentName)
+        public XmlDataAccess(string xmlDocumentName)
         {
             m_path = m_localPath + xmlDocumentName;
             m_doc = new XmlDocument();

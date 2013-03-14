@@ -20,3 +20,5 @@ as we run into roadblocks toward the goal more classes may be added and the stru
 
 
 
+1. noun list
+2. verb list

@@ -10,9 +10,9 @@ namespace AIMind
     {
         string[] _greet;
         // Data access object variable.
-        DataAccess daobj;
+        XmlDataAccess daobj;
         // constructor
-        public Greetings(DataAccess dataobject)
+        public Greetings(XmlDataAccess dataobject)
         {
             // Create the DataAccess access object.
             daobj = dataobject;
