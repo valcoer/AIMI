@@ -111,7 +111,7 @@ namespace AIMind
 
         private void InOut_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            dataAccess.saveDoc();
         }
 
        
