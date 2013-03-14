@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <words>
-    <word>I</word>
     <word>me</word>
     <word>you</word>
+    <word>I</word>
     <word>he</word>
     <word>she</word>
     <word>it</word>
-    <word>them</word>
     <word>they</word>
-    
+    <word>them</word>
   </words>
 </root>

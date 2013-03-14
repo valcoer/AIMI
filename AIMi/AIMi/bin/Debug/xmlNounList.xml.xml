@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <words>
-    <word>Hello</word>
-    <word>Hi</word>
-    <word>greeting</word>
-    <word>hey</word>
-    <word>hey</word>
-    <word>hey</word>
-    <word>waka</word>
-    <word>yo</word>
+    <word>I</word>
+    <word>me</word>
+    <word>you</word>
+    <word>he</word>
+    <word>she</word>
+    <word>it</word>
+    <word>them</word>
+    <word>they</word>
+    
   </words>
 </root>

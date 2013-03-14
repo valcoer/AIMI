@@ -20,6 +20,7 @@ namespace AIMind
         public Listener()
         {
             //initialize member variables
+            Console.WriteLine("listner entered");
             m_nounList = new XmlDataAccess("xmlNounList.xml");
             m_verbList = new XmlDataAccess("xmlVerbList.xml");
         }

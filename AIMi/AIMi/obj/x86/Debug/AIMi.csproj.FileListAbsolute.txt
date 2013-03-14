@@ -15,12 +15,12 @@ C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.exe
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.pdb
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMind.InOut.resources
 C:\Users\RipTide\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMind.Properties.Resources.resources
+C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.exe
+C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.pdb
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMind.InOut.resources
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMind.Properties.Resources.resources
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.exe
-C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\bin\Debug\AIMi.pdb
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.exe
 C:\Users\Arioch\Documents\GitHub\AIMI\AIMi\AIMi\obj\x86\Debug\AIMi.pdb
