@@ -17,6 +17,7 @@ namespace AIMind
         private string m_localPath = @"";
         XmlDocument m_doc;
         XmlNodeList m_nodelist;
+        private string m_documentName;
 
 
 
@@ -30,6 +31,11 @@ namespace AIMind
             m_doc = new XmlDocument();
             m_doc.Load(m_path);
             populateNodeList();
+            m_documentName = xmlDocumentName;
+        }
+        public void saveDoc()
+        {
+            m_doc.Save(m_documentName);
         }
 
      /// <summary>

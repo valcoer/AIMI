@@ -63,7 +63,7 @@ namespace AIMind
 
         private void noButton_Click(object sender, EventArgs e)
         {
-            lblOutputLabel.Text = 
+            
         }
 
         private void btnListVocabulary_Click(object sender, EventArgs e)
@@ -108,6 +108,13 @@ namespace AIMind
             }
 
         }
+
+        private void InOut_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+       
 
 
        

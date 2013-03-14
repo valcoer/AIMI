@@ -99,6 +99,7 @@
             this.Controls.Add(this.lblOutputLabel);
             this.Name = "InOut";
             this.Text = "AIMind";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InOut_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
