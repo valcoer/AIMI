@@ -32,7 +32,7 @@ namespace AIMind
         public Sentence parse_string_into_words(string input_sentence)
         {
             char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
-            //are there any other delimiters we need to be using?
+            //are there any other delimiters we need to be using?  Looks like you got them all
             string[] words = input_sentence.Split(delimiterChars);
 
           // create the sentence
@@ -41,6 +41,7 @@ namespace AIMind
             // add the word list to the sentence
 
             temp_sentence.wordlist = words;
+            
             string[] nouns = m_nounList.RetrieveWords();
              string[] verbs = m_verbList.RetrieveWords();
             foreach (string s in words)
@@ -49,6 +50,7 @@ namespace AIMind
                // as it's sentence component type (right now either noun or verb)
                // and create a Sentence object (Define this class) that contains the entire list of
                 // words stored as word objects (define this class)
+                 
 
                 bool result = false;
                 // verbs first

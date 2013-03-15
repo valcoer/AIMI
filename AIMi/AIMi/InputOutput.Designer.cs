@@ -30,8 +30,8 @@
         {
             this.lblOutputLabel = new System.Windows.Forms.Label();
             this.inputWindow = new System.Windows.Forms.TextBox();
-            this.YesButton = new System.Windows.Forms.Button();
-            this.noButton = new System.Windows.Forms.Button();
+            this.nounButton = new System.Windows.Forms.Button();
+            this.verbButton = new System.Windows.Forms.Button();
             this.btnListVocabulary = new System.Windows.Forms.Button();
             this.parse = new System.Windows.Forms.Button();
             this.lv_words = new System.Windows.Forms.ListView();
@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.greetingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblOutputLabel
@@ -62,27 +63,27 @@
             this.inputWindow.Enter += new System.EventHandler(this.inputWindow_EnterPressed);
             this.inputWindow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputWindow_KeyPress);
             // 
-            // YesButton
+            // nounButton
             // 
-            this.YesButton.Location = new System.Drawing.Point(12, 129);
-            this.YesButton.Name = "YesButton";
-            this.YesButton.Size = new System.Drawing.Size(75, 23);
-            this.YesButton.TabIndex = 3;
-            this.YesButton.Text = "Yes";
-            this.YesButton.UseVisualStyleBackColor = true;
-            this.YesButton.Visible = false;
-            this.YesButton.Click += new System.EventHandler(this.yesButton_Click);
+            this.nounButton.Location = new System.Drawing.Point(12, 129);
+            this.nounButton.Name = "nounButton";
+            this.nounButton.Size = new System.Drawing.Size(75, 23);
+            this.nounButton.TabIndex = 3;
+            this.nounButton.Text = "Noun";
+            this.nounButton.UseVisualStyleBackColor = true;
+            this.nounButton.Visible = false;
+            this.nounButton.Click += new System.EventHandler(this.NounButton_Click);
             // 
-            // noButton
+            // verbButton
             // 
-            this.noButton.Location = new System.Drawing.Point(111, 129);
-            this.noButton.Name = "noButton";
-            this.noButton.Size = new System.Drawing.Size(75, 23);
-            this.noButton.TabIndex = 4;
-            this.noButton.Text = "No";
-            this.noButton.UseVisualStyleBackColor = true;
-            this.noButton.Visible = false;
-            this.noButton.Click += new System.EventHandler(this.noButton_Click);
+            this.verbButton.Location = new System.Drawing.Point(111, 129);
+            this.verbButton.Name = "verbButton";
+            this.verbButton.Size = new System.Drawing.Size(75, 23);
+            this.verbButton.TabIndex = 4;
+            this.verbButton.Text = "Verb";
+            this.verbButton.UseVisualStyleBackColor = true;
+            this.verbButton.Visible = false;
+            this.verbButton.Click += new System.EventHandler(this.verbButton_Click);
             // 
             // btnListVocabulary
             // 
@@ -108,7 +109,7 @@
             // 
             this.lv_words.Location = new System.Drawing.Point(328, 52);
             this.lv_words.Name = "lv_words";
-            this.lv_words.Size = new System.Drawing.Size(91, 198);
+            this.lv_words.Size = new System.Drawing.Size(91, 147);
             this.lv_words.TabIndex = 7;
             this.lv_words.UseCompatibleStateImageBehavior = false;
             // 
@@ -116,7 +117,7 @@
             // 
             this.lv_nouns.Location = new System.Drawing.Point(425, 52);
             this.lv_nouns.Name = "lv_nouns";
-            this.lv_nouns.Size = new System.Drawing.Size(91, 198);
+            this.lv_nouns.Size = new System.Drawing.Size(91, 147);
             this.lv_nouns.TabIndex = 8;
             this.lv_nouns.UseCompatibleStateImageBehavior = false;
             // 
@@ -124,7 +125,7 @@
             // 
             this.lv_verbs.Location = new System.Drawing.Point(522, 52);
             this.lv_verbs.Name = "lv_verbs";
-            this.lv_verbs.Size = new System.Drawing.Size(91, 198);
+            this.lv_verbs.Size = new System.Drawing.Size(91, 147);
             this.lv_verbs.TabIndex = 9;
             this.lv_verbs.UseCompatibleStateImageBehavior = false;
             // 
@@ -155,11 +156,23 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Verbs";
             // 
+            // greetingButton
+            // 
+            this.greetingButton.Location = new System.Drawing.Point(209, 128);
+            this.greetingButton.Name = "greetingButton";
+            this.greetingButton.Size = new System.Drawing.Size(75, 23);
+            this.greetingButton.TabIndex = 13;
+            this.greetingButton.Text = "Greeting";
+            this.greetingButton.UseVisualStyleBackColor = true;
+            this.greetingButton.Visible = false;
+            this.greetingButton.Click += new System.EventHandler(this.greetingButton_Click);
+            // 
             // InOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 262);
+            this.Controls.Add(this.greetingButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -168,8 +181,8 @@
             this.Controls.Add(this.lv_words);
             this.Controls.Add(this.parse);
             this.Controls.Add(this.btnListVocabulary);
-            this.Controls.Add(this.noButton);
-            this.Controls.Add(this.YesButton);
+            this.Controls.Add(this.verbButton);
+            this.Controls.Add(this.nounButton);
             this.Controls.Add(this.inputWindow);
             this.Controls.Add(this.lblOutputLabel);
             this.Name = "InOut";
@@ -184,8 +197,8 @@
 
         private System.Windows.Forms.Label lblOutputLabel;
         private System.Windows.Forms.TextBox inputWindow;
-        private System.Windows.Forms.Button YesButton;
-        private System.Windows.Forms.Button noButton;
+        private System.Windows.Forms.Button nounButton;
+        private System.Windows.Forms.Button verbButton;
         private System.Windows.Forms.Button btnListVocabulary;
         private System.Windows.Forms.Button parse;
         private System.Windows.Forms.ListView lv_words;
@@ -194,6 +207,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button greetingButton;
 
     }
 }

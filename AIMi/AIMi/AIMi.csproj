@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dictionary.cs" />
     <Compile Include="Greetings.cs" />
     <Compile Include="InputOutput.cs">
       <SubType>Form</SubType>
@@ -75,7 +76,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,12 +87,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Design Document1.txt" />
-    <Content Include="XMLgreetinglist.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="xmlNounList.xml.xml" />
-    <Content Include="xmlVerbList.xml.xml" />
+    <Content Include="bin\Debug\Dictionary.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
