@@ -16,8 +16,10 @@ namespace AIMind
         public XmlDataAccess xmlDataAccess;
         public Greetings greetings;
         public Listener listener;
+        public Sentence currentSentence;
         public InOut()
         {
+            currentSentence = new Sentence();
             xmlDataAccess = new XmlDataAccess("XMLGreetinglist.xml");
             listener = new Listener();
             InitializeComponent();
@@ -119,7 +121,28 @@ namespace AIMind
         private void parse_Click(object sender, EventArgs e)
         {
             string sentence = inputWindow.Text;
-            listener.parse_Sentence(sentence);
+           currentSentence = listener.parse_string_into_words(sentence);
+           try
+           {
+
+               foreach (string s in currentSentence.wordlist)
+               {
+                   lv_words.Items.Add(s);
+               }
+               foreach (Noun n in currentSentence.m_subj.m_objects)
+               {
+                   lv_words.Items.Add(n.m_value);
+               }
+               foreach (Verb v in currentSentence.m_action.m_valueList)
+               {
+                   lv_verbs.Items.Add(v.m_value);
+               }
+           }
+           catch (Exception z)
+           {
+               MessageBox.Show("This is a sentence fragment, either nouns or verbs were null." + z.Message);
+           }
+
         }
 
        
