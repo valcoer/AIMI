@@ -1,8 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <words>
     <word>I</word>
     <PoS>noun</PoS>
-
+    <word>type</word>
+    <PoS>verb</PoS>
+    <word>here</word>
+    <PoS>noun</PoS>
   </words>
 </root>
