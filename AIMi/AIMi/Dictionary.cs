@@ -5,12 +5,14 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Text;
 
+
 namespace AIMind
 {
    public class Dictionary
     {
         // I probably did not need to clone the XmlDataAccess to this extent but I wanted to practice Im sure there are better ways to 
         // go about doing the sorting of words but this seemed to make sense to me so I am going to try it here.
+
         private string m_dictPath;
         private string m_nounPath;
         private string m_verbPath;
@@ -28,6 +30,7 @@ namespace AIMind
         private string m_verbDocumentName;
         private string m_greetDocumentName;
         private string m_dictDocumentName;
+        private string w;
         /// <summary>
         /// Constructor
         /// </summary>
@@ -69,6 +72,7 @@ namespace AIMind
 
 
         }
+        
         void populateNounNodeList()
         {
             XmlNode root = m_nounDoc.SelectSingleNode("//words");
@@ -118,10 +122,10 @@ namespace AIMind
 
             XmlNode newWordNode = m_dictDoc.CreateElement("word");
             newWordNode.InnerText = word;
-            m_greetDoc.SelectSingleNode("//words").AppendChild(newWordNode);
+            m_dictDoc.SelectSingleNode("//words").AppendChild(newWordNode);
             XmlNode newGreetNode = m_dictDoc.CreateElement("PoS");
-            newGreetNode.InnerText = "noun";
-            m_nounDoc.SelectSingleNode("//words").AppendChild(newGreetNode);
+            newGreetNode.InnerText = "interjection";
+            m_dictDoc.SelectSingleNode("//words").AppendChild(newGreetNode);
             m_dictNodelist = null;
             populateDictNodeList();
         }
@@ -132,7 +136,7 @@ namespace AIMind
               int x = 0;
               foreach (XmlNode n in m_dictNodelist)
               {
-                  string w;
+                  
                   w = n.InnerText.ToString();
                   list[x] = w;
                   x++;
@@ -154,15 +158,76 @@ namespace AIMind
 
           public void createNewNoun(string newNoun)
           {
-              AddNoun(newNoun);
+              int a = 0;
+
+              foreach (XmlNode n in m_dictNodelist)
+              {
+                  w = n.InnerText.ToString();
+                  if (newNoun == w)
+                  {
+                      a++;
+                      return;
+                  }
+                  else
+                  {
+
+                  }
+
+              }
+              if (a < 1)
+              {
+                  AddNoun(newNoun);
+              }
+            
           }
           public void createNewVerb(string newVerb)
           {
-              AddVerb(newVerb);
+              int a = 0;
+
+              foreach (XmlNode n in m_dictNodelist)
+              {
+               w = n.InnerText.ToString();
+                  if (newVerb == w)
+                  {
+                      a++;
+                      return;
+                  }
+                  else
+                  {
+                      
+                  }
+                 
+              }
+              if (a < 1)
+              {
+                  AddVerb(newVerb);
+              }
+              
           }
+
           public void createNewGreet(string newGreet)
           {
-              AddGreeting(newGreet);
+              int a = 0;
+             
+              foreach (XmlNode n in m_dictNodelist)
+              {
+
+                  w = n.InnerText.ToString();
+                  if (newGreet == w)
+                  {
+                      a++;
+                      return;
+                  }
+                  else
+                  {
+                      
+                  }
+                 
+              }
+              if (a < 1)
+              {
+                  AddGreeting(newGreet);
+              }
           }
     }
 }

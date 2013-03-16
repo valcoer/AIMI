@@ -88,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Dictionary.xml" />
+    <Content Include="bin\Debug\XMLgreetinglist.xml" />
+    <Content Include="bin\Debug\xmlNounList.xml" />
+    <Content Include="bin\Debug\xmlVerbList.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

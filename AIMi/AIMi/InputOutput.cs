@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace AIMind
 {
     public partial class InOut : Form
@@ -91,6 +92,7 @@ namespace AIMind
             lblOutputLabel.Text = "";
             for (int x = 0; x < do_dictionary.getNodelistSize(); x++)
             {
+                
                 lblOutputLabel.Text += temp[x].ToString() + " ";
             }
         }
@@ -100,7 +102,7 @@ namespace AIMind
             if (e.KeyChar == 13) // 13 is the enter key
             {
 
-                foreach (string dictionary in xmlDataAccess.RetrieveWords())
+                foreach (string dictionary in do_dictionary.RetrieveWords())
                 {
                     bool resultant;
                     resultant = this.inputWindow.Text.Contains(dictionary);

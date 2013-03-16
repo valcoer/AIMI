@@ -3,12 +3,6 @@
   <words>
     <word>I</word>
     <PoS>noun</PoS>
-    <word>type</word>
-    <PoS>verb</PoS>
-    <word>here</word>
-    <PoS>noun</PoS>
-    <word>I</word>
-    <PoS>noun</PoS>
     <word>you</word>
     <PoS>noun</PoS>
     <word>we</word>
@@ -22,6 +16,10 @@
     <word>type</word>
     <PoS>verb</PoS>
     <word>here</word>
+    <PoS>noun</PoS>
+    <word>howdy</word>
+    <PoS>interjection</PoS>
+    <word>we </word>
     <PoS>noun</PoS>
   </words>
 </root>
