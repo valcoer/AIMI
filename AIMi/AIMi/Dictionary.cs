@@ -125,6 +125,22 @@ namespace AIMind
             m_dictNodelist = null;
             populateDictNodeList();
         }
+          public String[] RetrieveWords()
+          {
+
+              string[] list = new string[m_dictNodelist.Count];
+              int x = 0;
+              foreach (XmlNode n in m_dictNodelist)
+              {
+                  string w;
+                  w = n.InnerText.ToString();
+                  list[x] = w;
+                  x++;
+              }
+
+              return list;
+
+          }
           public int getNodelistSize()
           {
               return m_dictNodelist.Count;

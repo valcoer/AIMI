@@ -86,10 +86,10 @@ namespace AIMind
 
         private void btnListVocabulary_Click(object sender, EventArgs e)
         {
-            string[] temp = new string[xmlDataAccess.getNodelistSize()];    
-            temp = xmlDataAccess.RetrieveWords();
+            string[] temp = new string[do_dictionary.getNodelistSize()];    
+            temp = do_dictionary.RetrieveWords();
             lblOutputLabel.Text = "";
-            for (int x = 0; x < xmlDataAccess.getNodelistSize(); x++)
+            for (int x = 0; x < do_dictionary.getNodelistSize(); x++)
             {
                 lblOutputLabel.Text += temp[x].ToString() + " ";
             }
