@@ -12,7 +12,12 @@ namespace AIMind
    public class Predicate
     {
         public List<Verb> m_valueList;
-        public Subject m_mySubject;
+      
+        public Predicate()
+        {
+          
+            m_valueList = new List<Verb>();
+        }
         
     }
 }

@@ -148,7 +148,7 @@ namespace AIMind
                }
                foreach (Noun n in currentSentence.m_subj.m_objects)
                {
-                   lv_words.Items.Add(n.m_value);
+                   lv_nouns.Items.Add(n.m_value);
                }
                foreach (Verb v in currentSentence.m_action.m_valueList)
                {

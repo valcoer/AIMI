@@ -58,7 +58,7 @@ namespace AIMind
                 // compare this particular s value to every t in the verbs list
                 foreach (string t in verbs)
                 {
-                    result = s.Contains(t);
+                    result = s.Equals(t);
                     if (result)
                     {
                         Verb temp = new Verb();
@@ -71,12 +71,13 @@ namespace AIMind
                 foreach (string n in nouns)
                 {
                     result = false;
-                    result = s.Contains(n);
+                    result = s.Equals(n);
                     if (result)
                     {
                         Noun temp = new Noun();
                         temp.m_value = s;
                         temp_sentence.m_subj.m_objects.Add(temp);
+                        result = false;
                     }
                 }// end nouns
             }//end foreach word

@@ -11,16 +11,11 @@ namespace AIMind
     /// </summary>
    public class Subject
     {
-       //what does m_imperative control?
-       public Predicate m_myAction;
        public bool m_imperative;
        public List<Noun> m_objects;
 
        public Subject()
        {
-           //why do we need the predicates in the subject class?
-           // what is the signifacance of using two different structures for the subject and predicates classes?
-           m_myAction = new Predicate();
            m_objects = new List<Noun>() ;
        }
 
