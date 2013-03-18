@@ -14,7 +14,7 @@ namespace AIMind
     {
 
         //data access object variable
-        public Dictionary do_dictionary;
+        public Dictionary currentDictionary;
         public XmlDataAccess xmlDataAccess;
         public Greetings greetings;
         public Listener listener;
@@ -33,47 +33,48 @@ namespace AIMind
             listener = new Listener();
             InitializeComponent();
             greetings = new Greetings(xmlDataAccess);
-          do_dictionary = new Dictionary("XMLGreetingList.xml","xmlNounList.xml","xmlVerbList.xml");
+          currentDictionary = new Dictionary("XMLGreetingList.xml","xmlNounList.xml","xmlVerbList.xml");
         }
         
 
        
      
 
-        private void inputWindow_EnterPressed(object sender, EventArgs e)
-        {
+        //private void inputWindow_EnterPressed(object sender, EventArgs e)
+        //{
              
-            foreach (string dictionary in xmlDataAccess.RetrieveWords())
-            {
-                bool resultant;
-                resultant = this.inputWindow.Text.Contains(dictionary);
+        //    foreach (string dictionary in xmlDataAccess.RetrieveWords())
+        //    {
+        //        bool resultant;
+        //        resultant = this.inputWindow.Text.Contains(dictionary);
 
-                if (resultant == true)
-                {
-                    lblOutputLabel.Text = "this word is in my vocabulary";
-                    return;
-                }
-                else
-                {
-                    lblOutputLabel.Text = "what part of speech is this word?";
-                    nounButton.Visible = true;
-                    verbButton.Visible = true;
-                    greetingButton.Visible = true;
+        //        if (resultant == true)
+        //        {
+        //            lblOutputLabel.Text = "this word is in my vocabulary";
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            lblOutputLabel.Text = "what part of speech is this word?";
+        //            nounButton.Visible = true;
+        //            verbButton.Visible = true;
+        //            greetingButton.Visible = true;
 
 
-                }
-            }
+        //        }
+        //    }
 
            
             
-        }
+       // }
 
         private void NounButton_Click(object sender, EventArgs e)
         {
             string newNoun = this.inputWindow.Text;
 
             lblOutputLabel.Text = newNoun;
-            do_dictionary.createNewNoun(newNoun);
+            currentDictionary.createNewNoun(newNoun);
+            xmlDataAccess.AddWord(newNoun);
             
         }
 
@@ -81,59 +82,98 @@ namespace AIMind
         {
             string newVerb = this.inputWindow.Text;
             lblOutputLabel.Text = newVerb;
-            do_dictionary.createNewVerb(newVerb);
+            currentDictionary.createNewVerb(newVerb);
+            xmlDataAccess.AddWord(newVerb);
             
         }
 
         private void btnListVocabulary_Click(object sender, EventArgs e)
         {
-            string[] temp = new string[do_dictionary.getNodelistSize()];    
-            temp = do_dictionary.RetrieveWords();
+            string[] temp = new string[currentDictionary.getNodelistSize()];    
+            temp = currentDictionary.RetrieveWords();
             lblOutputLabel.Text = "";
-            for (int x = 0; x < do_dictionary.getNodelistSize(); x++)
+            for (int x = 0; x < currentDictionary.getNodelistSize(); x++)
             {
                 
-                lblOutputLabel.Text += temp[x].ToString() + "  " + do_dictionary.RetrieveType(temp[x].ToString()).ToString() + ", ";
+                lblOutputLabel.Text += temp[x].ToString() + "  " + currentDictionary.RetrieveType(temp[x].ToString()).ToString() + ", ";
             }
         }
 
         private void inputWindow_KeyPress(object sender, KeyPressEventArgs e)
         {
+            string statementS;
+            string statementP;
             if (e.KeyChar == 13) // 13 is the enter key
             {
 
-                foreach (string dictionary in do_dictionary.RetrieveWords())
+                foreach (string dictionary in currentDictionary.RetrieveWords())
                 {
                     bool resultant;
+                   
                     resultant = this.inputWindow.Text.Contains(dictionary);
-
-                    if (resultant == true)
+                    bool result;
+                    string WordType;
+                    WordType = currentDictionary.RetrieveType(this.inputWindow.Text);
+                    result = WordType.Contains("interjection");
+                    if (resultant == true && result == true)
                     {
                         Random rnd = new Random();
                         int index = rnd.Next(1, xmlDataAccess.getNodelistSize()); // creates a number between 1 and the node list size
                         lblOutputLabel.Text = greetings.Greet[index].ToString();
                         nounButton.Visible = false;
                         verbButton.Visible = false;
+                        greetingButton.Visible = false;
                         return;
                     }
                     else
-                    {
-                        lblOutputLabel.Text = "what part of speech is this?";
-                        nounButton.Visible = true;
-                        verbButton.Visible = true;
-                        greetingButton.Visible = true;
+                        if (resultant == true)
+                        {
+                            string sentence = inputWindow.Text;
+                            currentSentence = listener.parse_string_into_words(sentence);
+                            foreach (Noun n in currentSentence.m_subj.m_objects)
+                            {
+                                statementS = "there is a Subject";
+                                lv_nouns.Items.Add(n.m_value);
+                                subjectLabel.Text = n.m_value;
+                                Console.WriteLine(statementS);
 
-                    }
+                            }
+                            foreach (Verb v in currentSentence.m_action.m_valueList)
+                            {
+                                statementP = "there is a predicate";
+                                lv_verbs.Items.Add(v.m_value);
+                                predicateLabel.Text = v.m_value;
+
+                                Console.WriteLine( statementP);
+                            }
+                            lblOutputLabel.Text = "this could be a sentence";
+                            return;
+                        }
+                        else
+                        {
+
+                            statementS = "there is no subject";
+                            statementP = "there is no predicate";
+                            Console.WriteLine( statementS + " " + statementP);
+                            nounButton.Visible = true;
+                            verbButton.Visible = true;
+                            greetingButton.Visible = true;
+                            
+                        }
+                    
                 }
+                
 
             }
+            
+
 
         }
 
         private void InOut_FormClosing(object sender, FormClosingEventArgs e)
         {
             xmlDataAccess.saveDoc();
-            do_dictionary.saveDoc();
+            currentDictionary.saveDoc();
         }
 
         private void parse_Click(object sender, EventArgs e)
@@ -170,13 +210,11 @@ namespace AIMind
         {
             string newGreet = this.inputWindow.Text;
             lblOutputLabel.Text = newGreet;
-            do_dictionary.createNewGreet(newGreet);
+            currentDictionary.createNewGreet(newGreet);
+            xmlDataAccess.AddWord(newGreet);
         }
 
-        private void predicateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
        
 

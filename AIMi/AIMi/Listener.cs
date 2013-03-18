@@ -13,6 +13,7 @@ namespace AIMind
        // declare member variables
       public XmlDataAccess m_nounList;
       public XmlDataAccess m_verbList;
+      public Dictionary m_dictionary;
 
         /// <summary>
         /// 
@@ -23,6 +24,7 @@ namespace AIMind
             Console.WriteLine("listner entered");
             m_nounList = new XmlDataAccess("xmlNounList.xml");
             m_verbList = new XmlDataAccess("xmlVerbList.xml");
+            m_dictionary = new Dictionary("xmlGreetingList.xml", "xmlNounList.xml", "xmlVerbList.xml");
             Console.WriteLine("listener constructor finished");
         }
         /// <summary>
@@ -44,6 +46,7 @@ namespace AIMind
             
             string[] nouns = m_nounList.RetrieveWords();
              string[] verbs = m_verbList.RetrieveWords();
+             string[] dictionary = m_dictionary.RetrieveWords();
             foreach (string s in words)
             {
                //TODO we need to identify each word in this array of words,
@@ -65,7 +68,9 @@ namespace AIMind
                         temp.m_value = s;
                         temp_sentence.m_action.m_valueList.Add(temp);
                         result = false;
-                    }
+                        int a = 0;
+                    } 
+                        
                 }// end verbs
                 // compare this particular s value to every t in the verbs list
                 foreach (string n in nouns)
@@ -78,8 +83,11 @@ namespace AIMind
                         temp.m_value = s;
                         temp_sentence.m_subj.m_objects.Add(temp);
                         result = false;
+                        int a = 0;
                     }
+                        
                 }// end nouns
+              
             }//end foreach word
             return temp_sentence;
         }// end function

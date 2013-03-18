@@ -43,10 +43,12 @@
             this.greetingButton = new System.Windows.Forms.Button();
             this.hiddenOutput = new System.Windows.Forms.GroupBox();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
+            this.predicateLabel = new System.Windows.Forms.Label();
+            this.subjectLabel = new System.Windows.Forms.Label();
             this.controlGroupBox = new System.Windows.Forms.GroupBox();
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
-            this.subjectLabel = new System.Windows.Forms.Label();
-            this.predicateLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.hiddenOutput.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.controlGroupBox.SuspendLayout();
@@ -71,7 +73,7 @@
             this.inputWindow.Size = new System.Drawing.Size(259, 20);
             this.inputWindow.TabIndex = 2;
             this.inputWindow.Text = "type here";
-            this.inputWindow.Enter += new System.EventHandler(this.inputWindow_EnterPressed);
+            // this.inputWindow.Enter += new System.EventHandler(this.inputWindow_EnterPressed);
             this.inputWindow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputWindow_KeyPress);
             // 
             // nounButton
@@ -180,30 +182,52 @@
             // 
             // hiddenOutput
             // 
+            this.hiddenOutput.Controls.Add(this.label5);
+            this.hiddenOutput.Controls.Add(this.label4);
+            this.hiddenOutput.Controls.Add(this.predicateLabel);
             this.hiddenOutput.Controls.Add(this.label3);
+            this.hiddenOutput.Controls.Add(this.subjectLabel);
             this.hiddenOutput.Controls.Add(this.label2);
             this.hiddenOutput.Controls.Add(this.label1);
             this.hiddenOutput.Controls.Add(this.lv_verbs);
             this.hiddenOutput.Controls.Add(this.lv_nouns);
             this.hiddenOutput.Controls.Add(this.lv_words);
-            this.hiddenOutput.Location = new System.Drawing.Point(309, 138);
+            this.hiddenOutput.Location = new System.Drawing.Point(309, 70);
             this.hiddenOutput.Name = "hiddenOutput";
-            this.hiddenOutput.Size = new System.Drawing.Size(351, 115);
+            this.hiddenOutput.Size = new System.Drawing.Size(351, 183);
             this.hiddenOutput.TabIndex = 14;
             this.hiddenOutput.TabStop = false;
             this.hiddenOutput.Text = "Hidden Output";
             // 
             // outputGroupBox
             // 
-            this.outputGroupBox.Controls.Add(this.predicateLabel);
-            this.outputGroupBox.Controls.Add(this.subjectLabel);
             this.outputGroupBox.Controls.Add(this.lblOutputLabel);
             this.outputGroupBox.Location = new System.Drawing.Point(297, 5);
             this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(348, 127);
+            this.outputGroupBox.Size = new System.Drawing.Size(348, 59);
             this.outputGroupBox.TabIndex = 15;
             this.outputGroupBox.TabStop = false;
             this.outputGroupBox.Text = "Output";
+            // 
+            // predicateLabel
+            // 
+            this.predicateLabel.AutoSize = true;
+            this.predicateLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.predicateLabel.Location = new System.Drawing.Point(223, 150);
+            this.predicateLabel.Name = "predicateLabel";
+            this.predicateLabel.Size = new System.Drawing.Size(81, 13);
+            this.predicateLabel.TabIndex = 3;
+            this.predicateLabel.Text = "Predicate Word";
+            // 
+            // subjectLabel
+            // 
+            this.subjectLabel.AutoSize = true;
+            this.subjectLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.subjectLabel.Location = new System.Drawing.Point(126, 150);
+            this.subjectLabel.Name = "subjectLabel";
+            this.subjectLabel.Size = new System.Drawing.Size(72, 13);
+            this.subjectLabel.TabIndex = 2;
+            this.subjectLabel.Text = "Subject Word";
             // 
             // controlGroupBox
             // 
@@ -229,24 +253,23 @@
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Input";
             // 
-            // subjectLabel
+            // label4
             // 
-            this.subjectLabel.AutoSize = true;
-            this.subjectLabel.Location = new System.Drawing.Point(9, 88);
-            this.subjectLabel.Name = "subjectLabel";
-            this.subjectLabel.Size = new System.Drawing.Size(43, 13);
-            this.subjectLabel.TabIndex = 2;
-            this.subjectLabel.Text = "Subject";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(129, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "subject";
             // 
-            // predicateLabel
+            // label5
             // 
-            this.predicateLabel.AutoSize = true;
-            this.predicateLabel.Location = new System.Drawing.Point(194, 88);
-            this.predicateLabel.Name = "predicateLabel";
-            this.predicateLabel.Size = new System.Drawing.Size(52, 13);
-            this.predicateLabel.TabIndex = 3;
-            this.predicateLabel.Text = "Predicate";
-            this.predicateLabel.Click += new System.EventHandler(this.predicateLabel_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(226, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "predicate";
             // 
             // InOut
             // 
@@ -292,6 +315,8 @@
         private System.Windows.Forms.GroupBox inputGroupBox;
         private System.Windows.Forms.Label predicateLabel;
         private System.Windows.Forms.Label subjectLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
 
     }
 }

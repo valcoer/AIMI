@@ -3,29 +3,13 @@
   <words>
     <word>I</word>
     <PoS>noun</PoS>
+    <word>am</word>
+    <PoS>verb</PoS>
     <word>you</word>
-    <PoS>noun</PoS>
-    <word>we</word>
     <PoS>noun</PoS>
     <word>are</word>
     <PoS>verb</PoS>
-    <word>am</word>
-    <PoS>verb</PoS>
-    <word>is</word>
-    <PoS>verb</PoS>
-    <word>type</word>
-    <PoS>verb</PoS>
-    <word>here</word>
-    <PoS>noun</PoS>
-    <word>howdy</word>
-    <PoS>interjection</PoS>
-    <word>we </word>
-    <PoS>noun</PoS>
-    <word>hello</word>
-    <PoS>interjection</PoS>
     <word>hi</word>
     <PoS>interjection</PoS>
-    <word>afternoon</word>
-    <PoS>noun</PoS>
   </words>
 </root>

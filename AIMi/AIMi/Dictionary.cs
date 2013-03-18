@@ -12,6 +12,8 @@ namespace AIMind
     {
         // I probably did not need to clone the XmlDataAccess to this extent but I wanted to practice Im sure there are better ways to 
         // go about doing the sorting of words but this seemed to make sense to me so I am going to try it here.
+      
+       public string m_word;
 
         private string m_dictPath;
         private string m_nounPath;
@@ -145,7 +147,7 @@ namespace AIMind
                   if (word == w)
                   {
                       index = a;
-                      Console.WriteLine(word + index + "inside retrieve type");
+                      Console.WriteLine("inside retrieve type. index for word found: " + index + "" + "index found for: " +  word);
 
                       break;
                   }
@@ -153,7 +155,7 @@ namespace AIMind
                   {
                       
                       a++;
-                      Console.WriteLine(a);
+                      
                   }
                   
               }
@@ -166,12 +168,12 @@ namespace AIMind
 
                   w = m.InnerText.ToString();
                   list[x] = w;
-                  Console.WriteLine(list[x]);
+                  
                   x++;
               }
               
               type = list[index].ToString();
-              Console.WriteLine("output for retrieve type  " + type);
+              Console.WriteLine("output for retrieve type:  " + type);
 
               return type;
 
@@ -189,7 +191,7 @@ namespace AIMind
                   
                   w = n.InnerText.ToString();
                   list[x] = w;
-                  Console.WriteLine(list[x]);
+                 
                   x++;
               }
            
