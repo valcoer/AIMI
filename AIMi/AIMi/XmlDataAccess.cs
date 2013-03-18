@@ -88,33 +88,6 @@ namespace AIMind
             XmlNode root = m_doc.SelectSingleNode("//words");
             m_nodelist = root.SelectNodes("word");
         }
-/// <summary>
-/// deprecated
-/// </summary>
-/// <param name="word"></param>
-/// <param name="list"></param>
-/// <param name="x"></param>
-/// <returns></returns>
-        public string[] insertWord(string word,string[] list,int x)
-        {
 
-            for (int i = 0; i >= x;i++ )
-            {
-                list[i] = word;
-            }
-            return list;
-        }
-        /// <summary>
-        /// Utility function for debugging
-        /// </summary>
-        /// <param name="word"></param>
-        static void test(string word)
-        {
-            if(word == null)
-            {
-                return;
-            }
-            Console.WriteLine(word);
-        }
     }
 }

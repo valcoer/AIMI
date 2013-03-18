@@ -7,12 +7,13 @@ namespace AIMind
 {
     /// <summary>
     /// A Subject is the noun in a sentence that is DOING the action.Plus specific behavior
-    /// that only a subject would need.
+    /// that only a subject would need.  Subjects may be more than one word.
     /// </summary>
    public class Subject
     {
        public bool m_imperative;
        public List<Noun> m_objects;
+       
 
        public Subject()
        {

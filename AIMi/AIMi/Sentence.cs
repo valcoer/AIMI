@@ -9,9 +9,7 @@ namespace AIMind
     {
        // there are 8 parts of speech that make up a sentence, these are
        // nouns, pronouns, verbs, adjectives, adverbs, conjunctions, prepositions, and interjections.
-       // of these only the interjection is commonly used alone.
-       // such as Hello!
-       // in this isntance the ! makes it an interjection.
+       // A sentence must have a subject and a verb but may also contain any other part of speech.
 
       
        public Predicate  m_action;

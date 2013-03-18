@@ -93,7 +93,7 @@ namespace AIMind
             for (int x = 0; x < do_dictionary.getNodelistSize(); x++)
             {
                 
-                lblOutputLabel.Text += temp[x].ToString() + " ";
+                lblOutputLabel.Text += temp[x].ToString() + "  " + do_dictionary.RetrieveType(temp[x].ToString()).ToString() + ", ";
             }
         }
 
@@ -171,6 +171,11 @@ namespace AIMind
             string newGreet = this.inputWindow.Text;
             lblOutputLabel.Text = newGreet;
             do_dictionary.createNewGreet(newGreet);
+        }
+
+        private void predicateLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
        

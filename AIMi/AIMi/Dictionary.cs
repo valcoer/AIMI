@@ -26,11 +26,13 @@ namespace AIMind
         XmlNodeList m_greetNodelist;
         XmlDocument m_dictDoc;
         XmlNodeList m_dictNodelist;
+        XmlNodeList m_dictNodeTypeList;
         private string m_nounDocumentName;
         private string m_verbDocumentName;
         private string m_greetDocumentName;
         private string m_dictDocumentName;
         private string w;
+        
         /// <summary>
         /// Constructor
         /// </summary>
@@ -92,6 +94,7 @@ namespace AIMind
         {
             XmlNode root = m_dictDoc.SelectSingleNode("//words");
             m_dictNodelist = root.SelectNodes("word");
+            m_dictNodeTypeList = root.SelectNodes("PoS");
         }
         public void AddNoun(string word)
         {
@@ -129,19 +132,68 @@ namespace AIMind
             m_dictNodelist = null;
             populateDictNodeList();
         }
-          public String[] RetrieveWords()
+          public string RetrieveType(string word)
           {
-
-              string[] list = new string[m_dictNodelist.Count];
+              string[] types = new string[m_dictNodeTypeList.Count];
+              int a = 0;
+              int index = 0;
               int x = 0;
+              string type;
               foreach (XmlNode n in m_dictNodelist)
               {
+                  w = n.InnerText.ToString();
+                  if (word == w)
+                  {
+                      index = a;
+                      Console.WriteLine(word + index + "inside retrieve type");
+
+                      break;
+                  }
+                  else
+                  {
+                      
+                      a++;
+                      Console.WriteLine(a);
+                  }
+                  
+              }
+              string[] list = new string[m_dictNodelist.Count];
+            
+
+              foreach (XmlNode m in m_dictNodeTypeList)
+              {
+
+
+                  w = m.InnerText.ToString();
+                  list[x] = w;
+                  Console.WriteLine(list[x]);
+                  x++;
+              }
+              
+              type = list[index].ToString();
+              Console.WriteLine("output for retrieve type  " + type);
+
+              return type;
+
+             
+          }
+          public String[] RetrieveWords()
+          {
+              
+              string[] list = new string[m_dictNodelist.Count];
+              int x = 0;
+              
+              foreach (XmlNode n in m_dictNodelist )
+              {
+                  
                   
                   w = n.InnerText.ToString();
                   list[x] = w;
+                  Console.WriteLine(list[x]);
                   x++;
               }
-
+           
+              
               return list;
 
           }

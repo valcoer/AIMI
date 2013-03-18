@@ -45,6 +45,8 @@
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
             this.controlGroupBox = new System.Windows.Forms.GroupBox();
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
+            this.subjectLabel = new System.Windows.Forms.Label();
+            this.predicateLabel = new System.Windows.Forms.Label();
             this.hiddenOutput.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.controlGroupBox.SuspendLayout();
@@ -54,6 +56,7 @@
             // lblOutputLabel
             // 
             this.lblOutputLabel.AutoSize = true;
+            this.lblOutputLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblOutputLabel.Location = new System.Drawing.Point(9, 15);
             this.lblOutputLabel.Name = "lblOutputLabel";
             this.lblOutputLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -117,7 +120,7 @@
             // 
             this.lv_words.Location = new System.Drawing.Point(32, 31);
             this.lv_words.Name = "lv_words";
-            this.lv_words.Size = new System.Drawing.Size(91, 147);
+            this.lv_words.Size = new System.Drawing.Size(91, 79);
             this.lv_words.TabIndex = 7;
             this.lv_words.UseCompatibleStateImageBehavior = false;
             // 
@@ -125,7 +128,7 @@
             // 
             this.lv_nouns.Location = new System.Drawing.Point(129, 31);
             this.lv_nouns.Name = "lv_nouns";
-            this.lv_nouns.Size = new System.Drawing.Size(91, 147);
+            this.lv_nouns.Size = new System.Drawing.Size(91, 79);
             this.lv_nouns.TabIndex = 8;
             this.lv_nouns.UseCompatibleStateImageBehavior = false;
             // 
@@ -133,7 +136,7 @@
             // 
             this.lv_verbs.Location = new System.Drawing.Point(226, 31);
             this.lv_verbs.Name = "lv_verbs";
-            this.lv_verbs.Size = new System.Drawing.Size(91, 147);
+            this.lv_verbs.Size = new System.Drawing.Size(91, 79);
             this.lv_verbs.TabIndex = 9;
             this.lv_verbs.UseCompatibleStateImageBehavior = false;
             // 
@@ -183,19 +186,21 @@
             this.hiddenOutput.Controls.Add(this.lv_verbs);
             this.hiddenOutput.Controls.Add(this.lv_nouns);
             this.hiddenOutput.Controls.Add(this.lv_words);
-            this.hiddenOutput.Location = new System.Drawing.Point(297, 58);
+            this.hiddenOutput.Location = new System.Drawing.Point(309, 138);
             this.hiddenOutput.Name = "hiddenOutput";
-            this.hiddenOutput.Size = new System.Drawing.Size(351, 195);
+            this.hiddenOutput.Size = new System.Drawing.Size(351, 115);
             this.hiddenOutput.TabIndex = 14;
             this.hiddenOutput.TabStop = false;
             this.hiddenOutput.Text = "Hidden Output";
             // 
             // outputGroupBox
             // 
+            this.outputGroupBox.Controls.Add(this.predicateLabel);
+            this.outputGroupBox.Controls.Add(this.subjectLabel);
             this.outputGroupBox.Controls.Add(this.lblOutputLabel);
             this.outputGroupBox.Location = new System.Drawing.Point(297, 5);
             this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(348, 47);
+            this.outputGroupBox.Size = new System.Drawing.Size(348, 127);
             this.outputGroupBox.TabIndex = 15;
             this.outputGroupBox.TabStop = false;
             this.outputGroupBox.Text = "Output";
@@ -209,7 +214,7 @@
             this.controlGroupBox.Controls.Add(this.nounButton);
             this.controlGroupBox.Location = new System.Drawing.Point(2, 138);
             this.controlGroupBox.Name = "controlGroupBox";
-            this.controlGroupBox.Size = new System.Drawing.Size(289, 125);
+            this.controlGroupBox.Size = new System.Drawing.Size(277, 125);
             this.controlGroupBox.TabIndex = 16;
             this.controlGroupBox.TabStop = false;
             this.controlGroupBox.Text = "Learning controls";
@@ -219,10 +224,29 @@
             this.inputGroupBox.Controls.Add(this.inputWindow);
             this.inputGroupBox.Location = new System.Drawing.Point(5, 3);
             this.inputGroupBox.Name = "inputGroupBox";
-            this.inputGroupBox.Size = new System.Drawing.Size(285, 103);
+            this.inputGroupBox.Size = new System.Drawing.Size(274, 103);
             this.inputGroupBox.TabIndex = 17;
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Input";
+            // 
+            // subjectLabel
+            // 
+            this.subjectLabel.AutoSize = true;
+            this.subjectLabel.Location = new System.Drawing.Point(9, 88);
+            this.subjectLabel.Name = "subjectLabel";
+            this.subjectLabel.Size = new System.Drawing.Size(43, 13);
+            this.subjectLabel.TabIndex = 2;
+            this.subjectLabel.Text = "Subject";
+            // 
+            // predicateLabel
+            // 
+            this.predicateLabel.AutoSize = true;
+            this.predicateLabel.Location = new System.Drawing.Point(194, 88);
+            this.predicateLabel.Name = "predicateLabel";
+            this.predicateLabel.Size = new System.Drawing.Size(52, 13);
+            this.predicateLabel.TabIndex = 3;
+            this.predicateLabel.Text = "Predicate";
+            this.predicateLabel.Click += new System.EventHandler(this.predicateLabel_Click);
             // 
             // InOut
             // 
@@ -266,6 +290,8 @@
         private System.Windows.Forms.GroupBox outputGroupBox;
         private System.Windows.Forms.GroupBox controlGroupBox;
         private System.Windows.Forms.GroupBox inputGroupBox;
+        private System.Windows.Forms.Label predicateLabel;
+        private System.Windows.Forms.Label subjectLabel;
 
     }
 }
