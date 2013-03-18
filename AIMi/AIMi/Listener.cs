@@ -68,7 +68,7 @@ namespace AIMind
                         temp.m_value = s;
                         temp_sentence.m_action.m_valueList.Add(temp);
                         result = false;
-                        int a = 0;
+                      
                     } 
                         
                 }// end verbs
@@ -83,7 +83,7 @@ namespace AIMind
                         temp.m_value = s;
                         temp_sentence.m_subj.m_objects.Add(temp);
                         result = false;
-                        int a = 0;
+                      
                     }
                         
                 }// end nouns

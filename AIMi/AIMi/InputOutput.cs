@@ -40,33 +40,7 @@ namespace AIMind
        
      
 
-        //private void inputWindow_EnterPressed(object sender, EventArgs e)
-        //{
-             
-        //    foreach (string dictionary in xmlDataAccess.RetrieveWords())
-        //    {
-        //        bool resultant;
-        //        resultant = this.inputWindow.Text.Contains(dictionary);
-
-        //        if (resultant == true)
-        //        {
-        //            lblOutputLabel.Text = "this word is in my vocabulary";
-        //            return;
-        //        }
-        //        else
-        //        {
-        //            lblOutputLabel.Text = "what part of speech is this word?";
-        //            nounButton.Visible = true;
-        //            verbButton.Visible = true;
-        //            greetingButton.Visible = true;
-
-
-        //        }
-        //    }
-
-           
-            
-       // }
+       
 
         private void NounButton_Click(object sender, EventArgs e)
         {
