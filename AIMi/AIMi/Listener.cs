@@ -27,6 +27,9 @@ namespace AIMind
             m_dictionary = new Dictionary("xmlGreetingList.xml", "xmlNounList.xml", "xmlVerbList.xml");
             Console.WriteLine("listener constructor finished");
         }
+
+
+
         /// <summary>
         /// Sentence Parser interface routine
         /// </summary>

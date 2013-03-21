@@ -48,6 +48,7 @@ namespace AIMind
 
             lblOutputLabel.Text = newNoun;
             currentDictionary.createNewNoun(newNoun);
+            listener.m_nounList.AddWord(newNoun);
             xmlDataAccess.AddWord(newNoun);
             
         }
@@ -57,6 +58,7 @@ namespace AIMind
             string newVerb = this.inputWindow.Text;
             lblOutputLabel.Text = newVerb;
             currentDictionary.createNewVerb(newVerb);
+            listener.m_verbList.AddWord(newVerb);
             xmlDataAccess.AddWord(newVerb);
             
         }

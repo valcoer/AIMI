@@ -136,7 +136,7 @@ namespace AIMind
         }
           public string RetrieveType(string word)
           {
-              string[] types = new string[m_dictNodeTypeList.Count];
+             // string[] types = new string[m_dictNodeTypeList.Count];
               int a = 0;
               int index = 0;
               int x = 0;
