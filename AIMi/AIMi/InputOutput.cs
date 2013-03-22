@@ -150,6 +150,7 @@ namespace AIMind
         {
             xmlDataAccess.saveDoc();
             currentDictionary.saveDoc();
+
         }
 
         private void parse_Click(object sender, EventArgs e)

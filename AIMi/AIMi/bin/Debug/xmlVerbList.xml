@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <words>
-    <word>is</word>
-    <word>are</word>
-    <word>were</word>
     <word>am</word>
-    <word>be</word>
-    <word>give</word>
-    <word>take</word>
-    <word>do</word>
+    <word>are</word>
+    <word>is</word>
+    <word>will</word>
   </words>
 </root>

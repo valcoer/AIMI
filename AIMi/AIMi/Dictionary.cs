@@ -102,36 +102,51 @@ namespace AIMind
         {
 
             XmlNode newWordNode = m_dictDoc.CreateElement("word");
+            XmlNode newNoun = m_nounDoc.CreateElement("word");
+            newNoun.InnerText = word;
             newWordNode.InnerText = word;
             m_dictDoc.SelectSingleNode("//words").AppendChild(newWordNode);
             XmlNode newNounNode = m_dictDoc.CreateElement("PoS");
             newNounNode.InnerText = "noun";
             m_dictDoc.SelectSingleNode("//words").AppendChild(newNounNode);
+            m_nounDoc.SelectSingleNode("//words").AppendChild(newNoun);
             m_dictNodelist = null;
+            m_nounNodelist = null;
+            populateNounNodeList();
             populateDictNodeList();
         }
           public void AddVerb(string word)
         {
 
             XmlNode newWordNode = m_dictDoc.CreateElement("word");
+            XmlNode newVerb = m_verbDoc.CreateElement("word");
             newWordNode.InnerText = word;
+            newVerb.InnerText = word;
             m_dictDoc.SelectSingleNode("//words").AppendChild(newWordNode);
+            m_verbDoc.SelectSingleNode("//words").AppendChild(newVerb);
             XmlNode newVerbNode = m_dictDoc.CreateElement("PoS");
             newVerbNode.InnerText = "verb";
             m_dictDoc.SelectSingleNode("//words").AppendChild(newVerbNode);
             m_dictNodelist = null;
+            m_verbNodelist = null;
+            populateVerbNodeList();
             populateDictNodeList();
         }
           public void AddGreeting(string word)
         {
 
             XmlNode newWordNode = m_dictDoc.CreateElement("word");
+            XmlNode newGreeting = m_greetDoc.CreateElement("word");
             newWordNode.InnerText = word;
+            newGreeting.InnerText = word;
             m_dictDoc.SelectSingleNode("//words").AppendChild(newWordNode);
+            m_greetDoc.SelectSingleNode("//words").AppendChild(newGreeting);
             XmlNode newGreetNode = m_dictDoc.CreateElement("PoS");
             newGreetNode.InnerText = "interjection";
             m_dictDoc.SelectSingleNode("//words").AppendChild(newGreetNode);
             m_dictNodelist = null;
+            m_greetNodelist = null;
+            populateGreetNodeList();
             populateDictNodeList();
         }
           public string RetrieveType(string word)
@@ -206,6 +221,9 @@ namespace AIMind
           public void saveDoc()
           {
               m_dictDoc.Save(m_dictDocumentName);
+              m_nounDoc.Save(m_nounDocumentName);
+              m_verbDoc.Save(m_verbDocumentName);
+              m_greetDoc.Save(m_greetDocumentName);
           }
 
 
@@ -283,5 +301,6 @@ namespace AIMind
                   AddGreeting(newGreet);
               }
           }
+      
     }
 }
