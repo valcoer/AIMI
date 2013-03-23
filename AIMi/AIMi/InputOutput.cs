@@ -46,7 +46,7 @@ namespace AIMind
         {
             string newNoun = this.inputWindow.Text;
 
-            lblOutputLabel.Text = newNoun;
+            OutputLabel.Text = newNoun;
             currentDictionary.createNewNoun(newNoun);
             listener.m_nounList.AddWord(newNoun);
             xmlDataAccess.AddWord(newNoun);
@@ -56,7 +56,7 @@ namespace AIMind
         private void verbButton_Click(object sender, EventArgs e)
         {
             string newVerb = this.inputWindow.Text;
-            lblOutputLabel.Text = newVerb;
+            OutputLabel.Text = newVerb;
             currentDictionary.createNewVerb(newVerb);
             listener.m_verbList.AddWord(newVerb);
             xmlDataAccess.AddWord(newVerb);
@@ -67,11 +67,11 @@ namespace AIMind
         {
             string[] temp = new string[currentDictionary.getNodelistSize()];    
             temp = currentDictionary.RetrieveWords();
-            lblOutputLabel.Text = "";
+            OutputLabel.Text = "";
             for (int x = 0; x < currentDictionary.getNodelistSize(); x++)
             {
                 
-                lblOutputLabel.Text += temp[x].ToString() + "  " + currentDictionary.RetrieveType(temp[x].ToString()).ToString() + ", ";
+                OutputLabel.Text += temp[x].ToString() + "  " + currentDictionary.RetrieveType(temp[x].ToString()).ToString() + ", ";
             }
         }
 
@@ -95,7 +95,7 @@ namespace AIMind
                     {
                         Random rnd = new Random();
                         int index = rnd.Next(1, xmlDataAccess.getNodelistSize()); // creates a number between 1 and the node list size
-                        lblOutputLabel.Text = greetings.Greet[index].ToString();
+                        OutputLabel.Text = greetings.Greet[index].ToString();
                         nounButton.Visible = false;
                         verbButton.Visible = false;
                         greetingButton.Visible = false;
@@ -122,7 +122,7 @@ namespace AIMind
 
                                 Console.WriteLine( statementP);
                             }
-                            lblOutputLabel.Text = "this could be a sentence";
+                            OutputLabel.Text = "this could be a sentence";
                             return;
                         }
                         else
@@ -186,10 +186,12 @@ namespace AIMind
         private void greetingButton_Click(object sender, EventArgs e)
         {
             string newGreet = this.inputWindow.Text;
-            lblOutputLabel.Text = newGreet;
+            OutputLabel.Text = newGreet;
             currentDictionary.createNewGreet(newGreet);
             xmlDataAccess.AddWord(newGreet);
         }
+
+      
 
        
 

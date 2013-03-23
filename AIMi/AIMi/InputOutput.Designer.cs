@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblOutputLabel = new System.Windows.Forms.Label();
+            this.OutputLabel = new System.Windows.Forms.Label();
             this.inputWindow = new System.Windows.Forms.TextBox();
             this.nounButton = new System.Windows.Forms.Button();
             this.verbButton = new System.Windows.Forms.Button();
@@ -42,29 +42,37 @@
             this.label3 = new System.Windows.Forms.Label();
             this.greetingButton = new System.Windows.Forms.Button();
             this.hiddenOutput = new System.Windows.Forms.GroupBox();
-            this.outputGroupBox = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.predicateLabel = new System.Windows.Forms.Label();
             this.subjectLabel = new System.Windows.Forms.Label();
+            this.outputGroupBox = new System.Windows.Forms.GroupBox();
+            this.responseTextBox = new System.Windows.Forms.TextBox();
             this.controlGroupBox = new System.Windows.Forms.GroupBox();
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.hiddenOutput.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.controlGroupBox.SuspendLayout();
             this.inputGroupBox.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblOutputLabel
+            // OutputLabel
             // 
-            this.lblOutputLabel.AutoSize = true;
-            this.lblOutputLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblOutputLabel.Location = new System.Drawing.Point(9, 15);
-            this.lblOutputLabel.Name = "lblOutputLabel";
-            this.lblOutputLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblOutputLabel.Size = new System.Drawing.Size(131, 13);
-            this.lblOutputLabel.TabIndex = 1;
-            this.lblOutputLabel.Text = "my responses appear here";
+            this.OutputLabel.AutoSize = true;
+            this.OutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.OutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.OutputLabel.Location = new System.Drawing.Point(9, 15);
+            this.OutputLabel.Name = "OutputLabel";
+            this.OutputLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OutputLabel.Size = new System.Drawing.Size(133, 15);
+            this.OutputLabel.TabIndex = 1;
+            this.OutputLabel.Text = "my responses appear here";
             // 
             // inputWindow
             // 
@@ -73,7 +81,6 @@
             this.inputWindow.Size = new System.Drawing.Size(259, 20);
             this.inputWindow.TabIndex = 2;
             this.inputWindow.Text = "type here";
-            // this.inputWindow.Enter += new System.EventHandler(this.inputWindow_EnterPressed);
             this.inputWindow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputWindow_KeyPress);
             // 
             // nounButton
@@ -192,22 +199,30 @@
             this.hiddenOutput.Controls.Add(this.lv_verbs);
             this.hiddenOutput.Controls.Add(this.lv_nouns);
             this.hiddenOutput.Controls.Add(this.lv_words);
-            this.hiddenOutput.Location = new System.Drawing.Point(309, 70);
+            this.hiddenOutput.Location = new System.Drawing.Point(6, 3);
             this.hiddenOutput.Name = "hiddenOutput";
             this.hiddenOutput.Size = new System.Drawing.Size(351, 183);
             this.hiddenOutput.TabIndex = 14;
             this.hiddenOutput.TabStop = false;
             this.hiddenOutput.Text = "Hidden Output";
             // 
-            // outputGroupBox
+            // label5
             // 
-            this.outputGroupBox.Controls.Add(this.lblOutputLabel);
-            this.outputGroupBox.Location = new System.Drawing.Point(297, 5);
-            this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(348, 59);
-            this.outputGroupBox.TabIndex = 15;
-            this.outputGroupBox.TabStop = false;
-            this.outputGroupBox.Text = "Output";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(226, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "predicate";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(129, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "subject";
             // 
             // predicateLabel
             // 
@@ -229,6 +244,28 @@
             this.subjectLabel.TabIndex = 2;
             this.subjectLabel.Text = "Subject Word";
             // 
+            // outputGroupBox
+            // 
+            this.outputGroupBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.outputGroupBox.Controls.Add(this.responseTextBox);
+            this.outputGroupBox.Controls.Add(this.OutputLabel);
+            this.outputGroupBox.Location = new System.Drawing.Point(297, 5);
+            this.outputGroupBox.Name = "outputGroupBox";
+            this.outputGroupBox.Size = new System.Drawing.Size(348, 59);
+            this.outputGroupBox.TabIndex = 15;
+            this.outputGroupBox.TabStop = false;
+            this.outputGroupBox.Text = "Output";
+            // 
+            // responseTextBox
+            // 
+            this.responseTextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.responseTextBox.Location = new System.Drawing.Point(27, 34);
+            this.responseTextBox.Multiline = true;
+            this.responseTextBox.Name = "responseTextBox";
+            this.responseTextBox.ReadOnly = true;
+            this.responseTextBox.Size = new System.Drawing.Size(100, 20);
+            this.responseTextBox.TabIndex = 2;
+            // 
             // controlGroupBox
             // 
             this.controlGroupBox.Controls.Add(this.greetingButton);
@@ -236,7 +273,7 @@
             this.controlGroupBox.Controls.Add(this.btnListVocabulary);
             this.controlGroupBox.Controls.Add(this.verbButton);
             this.controlGroupBox.Controls.Add(this.nounButton);
-            this.controlGroupBox.Location = new System.Drawing.Point(2, 138);
+            this.controlGroupBox.Location = new System.Drawing.Point(6, 6);
             this.controlGroupBox.Name = "controlGroupBox";
             this.controlGroupBox.Size = new System.Drawing.Size(277, 125);
             this.controlGroupBox.TabIndex = 16;
@@ -245,41 +282,55 @@
             // 
             // inputGroupBox
             // 
+            this.inputGroupBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.inputGroupBox.Controls.Add(this.inputWindow);
-            this.inputGroupBox.Location = new System.Drawing.Point(5, 3);
+            this.inputGroupBox.Location = new System.Drawing.Point(5, 5);
             this.inputGroupBox.Name = "inputGroupBox";
-            this.inputGroupBox.Size = new System.Drawing.Size(274, 103);
+            this.inputGroupBox.Size = new System.Drawing.Size(274, 59);
             this.inputGroupBox.TabIndex = 17;
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Input";
             // 
-            // label4
+            // tabControl1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(129, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "subject";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(5, 70);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(671, 219);
+            this.tabControl1.TabIndex = 18;
             // 
-            // label5
+            // tabPage1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(226, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "predicate";
+            this.tabPage1.Controls.Add(this.controlGroupBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(663, 193);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.hiddenOutput);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(663, 193);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // InOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 262);
+            this.ClientSize = new System.Drawing.Size(688, 310);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.inputGroupBox);
-            this.Controls.Add(this.controlGroupBox);
             this.Controls.Add(this.outputGroupBox);
-            this.Controls.Add(this.hiddenOutput);
             this.Name = "InOut";
             this.Text = "AIMind";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InOut_FormClosing);
@@ -290,13 +341,16 @@
             this.controlGroupBox.ResumeLayout(false);
             this.inputGroupBox.ResumeLayout(false);
             this.inputGroupBox.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblOutputLabel;
+        private System.Windows.Forms.Label OutputLabel;
         private System.Windows.Forms.TextBox inputWindow;
         private System.Windows.Forms.Button nounButton;
         private System.Windows.Forms.Button verbButton;
@@ -317,6 +371,10 @@
         private System.Windows.Forms.Label subjectLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox responseTextBox;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
 
     }
 }

@@ -15,6 +15,7 @@ namespace AIMind
     {
         public List<Verb> m_valueList;
         public string m_adverb;
+       //this would be the noun that is the object in the predicate.
         public string m_predicativeObject;
       
         public Predicate()
