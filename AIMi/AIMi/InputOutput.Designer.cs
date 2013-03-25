@@ -64,13 +64,12 @@
             // 
             // OutputLabel
             // 
-            this.OutputLabel.AutoSize = true;
-            this.OutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.OutputLabel.BackColor = System.Drawing.SystemColors.Window;
             this.OutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.OutputLabel.Location = new System.Drawing.Point(9, 15);
+            this.OutputLabel.Location = new System.Drawing.Point(289, 6);
             this.OutputLabel.Name = "OutputLabel";
             this.OutputLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.OutputLabel.Size = new System.Drawing.Size(133, 15);
+            this.OutputLabel.Size = new System.Drawing.Size(368, 184);
             this.OutputLabel.TabIndex = 1;
             this.OutputLabel.Text = "my responses appear here";
             // 
@@ -248,7 +247,6 @@
             // 
             this.outputGroupBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.outputGroupBox.Controls.Add(this.responseTextBox);
-            this.outputGroupBox.Controls.Add(this.OutputLabel);
             this.outputGroupBox.Location = new System.Drawing.Point(297, 5);
             this.outputGroupBox.Name = "outputGroupBox";
             this.outputGroupBox.Size = new System.Drawing.Size(348, 59);
@@ -304,6 +302,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.controlGroupBox);
+            this.tabPage1.Controls.Add(this.OutputLabel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
